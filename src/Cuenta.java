@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Cuenta {
     private String numCuenta;
     private String titular;
@@ -29,5 +31,18 @@ public class Cuenta {
                 ", saldo=" + saldo +
                 ", tipo='" + tipo + '\'' +
                 '}';
+    }
+
+    public Cuenta(Cliente cliente, String tipo) {
+        this.numCuenta= "001";
+        this.titular = cliente.nombre;
+        this.tipo = tipo;
+        cliente.cuentas = Arrays.copyOf(cliente.cuentas, cliente.cuentas.length + 1);
+        cliente.cuentas[cliente.cuentas.length -1]= this;
+
+        System.out.println("Crear: "+ tipo+" {"+
+                "numCuenta='" + numCuenta + '\'' +
+                ", titular='" + titular + '\'' +
+                ", saldo=" + saldo+"}");
     }
 }
