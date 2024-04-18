@@ -6,7 +6,8 @@ public class Main {
     Cliente cliente1 = new Cliente("Tito Soto", "12.345.678-9","Calle 1, 01", "+5691123123");
     Cuenta cuenta1 = crearCuenta(cliente1, "Ahorros");
 
-        System.out.println(cuenta1);
+        cuenta1.deposito(1000);
+        cuenta1.giro(100);
 
 
 
@@ -16,6 +17,8 @@ public class Main {
 
             cliente.cuentas = Arrays.copyOf(cliente.cuentas, cliente.cuentas.length + 1);
             cliente.cuentas[cliente.cuentas.length -1]= cuenta;
+
+        System.out.println(cuenta.toString());
 
 
         return cuenta;

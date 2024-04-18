@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class Cliente {
-    public String nombre;
+    protected String nombre;
 
-    public String rut;
-    public  String direccion;
-    public  String numTelefono;
+    private String rut;
+    private   String direccion;
+    private   String numTelefono;
 
-    public Cuenta[] cuentas = new Cuenta[0];
+    protected Cuenta[] cuentas = new Cuenta[0];
 
 
     public Cliente(String nombre, String rut , String direccion, String numTelefono) {
