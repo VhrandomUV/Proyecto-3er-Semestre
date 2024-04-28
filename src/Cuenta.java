@@ -6,12 +6,7 @@ public class Cuenta {
     private int saldo;
     private String tipo;
 
-    public Cuenta(String numCuenta, String titular, String tipo) {
-        this.numCuenta = numCuenta;
-        this.titular = titular;
 
-        this.tipo = tipo;
-    }
 
     public void deposito(int cantidad) {
         this.saldo += cantidad;
@@ -33,12 +28,11 @@ public class Cuenta {
                 '}';
     }
 
-    public Cuenta(Cliente cliente, String tipo) {
-        this.numCuenta= "001";
+    public Cuenta(Cliente cliente, String tipo, String numCuenta) {
+        this.numCuenta= numCuenta;
         this.titular = cliente.nombre;
         this.tipo = tipo;
-        cliente.cuentas = Arrays.copyOf(cliente.cuentas, cliente.cuentas.length + 1);
-        cliente.cuentas[cliente.cuentas.length -1]= this;
+        cliente.cuentas.add(this);
 
         System.out.println("Crear: "+ tipo+" {"+
                 "numCuenta='" + numCuenta + '\'' +

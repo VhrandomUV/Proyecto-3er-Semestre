@@ -7,7 +7,8 @@ public class Cliente {
     private   String direccion;
     private   String numTelefono;
 
-    protected Cuenta[] cuentas = new Cuenta[0];
+    //protected Cuenta[] cuentas = new Cuenta[0];
+    ArrayList <Cuenta> cuentas = new ArrayList<Cuenta>();
 
 
     public Cliente(String nombre, String rut , String direccion, String numTelefono) {
