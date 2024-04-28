@@ -9,6 +9,8 @@ public class Main {
         cuenta1.deposito(1000);
         cuenta1.giro(100);
 
+        System.out.println(cliente1.toString());
+
 
     }
 

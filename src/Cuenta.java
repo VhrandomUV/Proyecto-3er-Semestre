@@ -10,12 +10,12 @@ public class Cuenta {
 
     public void deposito(int cantidad) {
         this.saldo += cantidad;
-        System.out.println(toString());
+        //System.out.println(toString());
     }
 
     public void giro(int cantidad){
         this.saldo -= cantidad;
-        System.out.println(toString());
+        //System.out.println(toString());
     }
 
     @Override
