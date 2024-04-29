@@ -5,11 +5,12 @@ public class Main {
 
     Cliente cliente1 = new Cliente("Tito Soto", "12.345.678-9","Calle 1, 01", "+5691123123");
     Cuenta cuenta1 = new Ahorros(cliente1, "001");
+    Cuenta cuenta2 = new Vista(cliente1, "002");
 
-        cuenta1.deposito(1000);
+        cuenta1.deposito(1000, cuenta2);
         cuenta1.giro(100);
 
-        System.out.println(cliente1.toString());
+        cliente1.infoCliente();
 
 
     }

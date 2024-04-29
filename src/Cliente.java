@@ -19,6 +19,8 @@ public class Cliente {
 
     }
 
+
+
     @Override
     public String toString() {
         return "Cliente{" +
@@ -28,5 +30,9 @@ public class Cliente {
                 ", numTelefono='" + numTelefono + '\'' +
                 ", cuentas=" + cuentas +
                 '}';
+    }
+
+    public void infoCliente(){
+        System.out.println(toString());
     }
 }

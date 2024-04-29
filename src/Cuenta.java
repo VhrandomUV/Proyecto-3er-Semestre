@@ -1,16 +1,17 @@
 import java.util.Arrays;
 
-public class Cuenta {
+public abstract class Cuenta {
     private String numCuenta;
     private String titular;
-    private int saldo;
+    protected int saldo;
     private String tipo;
 
 
 
-    public void deposito(int cantidad) {
-        this.saldo += cantidad;
-        System.out.println("Deposito $"+cantidad +" "+toString());
+    public void deposito(int cantidad, Cuenta destino) {
+        this.saldo -= cantidad;
+        destino.saldo += cantidad;
+        System.out.println("Deposito $"+cantidad +" Destino "+destino.numCuenta+toString());
     }
 
     public void giro(int cantidad){
