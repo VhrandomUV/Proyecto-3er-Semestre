@@ -10,20 +10,20 @@ public class Cuenta {
 
     public void deposito(int cantidad) {
         this.saldo += cantidad;
-        //System.out.println(toString());
+        System.out.println("Deposito $"+cantidad +" "+toString());
     }
 
     public void giro(int cantidad){
         this.saldo -= cantidad;
-        //System.out.println(toString());
+        System.out.println("Giro $"+cantidad +" "+toString());
     }
 
     @Override
     public String toString() {
-        return "Cuenta{" +
+        return "{" +
                 "numCuenta='" + numCuenta + '\'' +
                 ", titular='" + titular + '\'' +
-                ", saldo=" + saldo +
+                ", saldo=$" + saldo +
                 ", tipo='" + tipo + '\'' +
                 '}';
     }
