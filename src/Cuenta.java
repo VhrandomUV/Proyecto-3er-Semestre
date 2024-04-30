@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public abstract class Cuenta {
     private String numCuenta;
     private String titular;
@@ -8,12 +6,15 @@ public abstract class Cuenta {
 
 
 
-    public void deposito(int cantidad, Cuenta destino) {
+    public void transferencia(int cantidad, Cuenta destino) {
         this.saldo -= cantidad;
         destino.saldo += cantidad;
         System.out.println("Deposito $"+cantidad +" Destino "+destino.numCuenta+toString());
     }
 
+    public void deposito(int cantidad ){
+        this.saldo += cantidad;
+    }
     public void giro(int cantidad){
         this.saldo -= cantidad;
         System.out.println("Giro $"+cantidad +" "+toString());
@@ -35,9 +36,9 @@ public abstract class Cuenta {
         this.tipo = tipo;
         cliente.cuentas.add(this);
 
-        System.out.println("Crear: "+ tipo+" {"+
-                "numCuenta='" + numCuenta + '\'' +
-                ", titular='" + titular + '\'' +
-                ", saldo=" + saldo+"}");
+
+
+
+
     }
 }

@@ -28,7 +28,7 @@ public class Cliente {
                 ", rut='" + rut + '\'' +
                 ", direccion='" + direccion + '\'' +
                 ", numTelefono='" + numTelefono + '\'' +
-                ", cuentas=" + cuentas +
+                ", \ncuentas=" + cuentas +
                 '}';
     }
 
