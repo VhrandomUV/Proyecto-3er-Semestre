@@ -1,14 +1,14 @@
 import java.util.ArrayList;
 
 public class Cliente {
-    protected String nombre;
+    private String nombre;
 
     private String rut;
     private   String direccion;
     private   String numTelefono;
 
     //protected Cuenta[] cuentas = new Cuenta[0];
-    ArrayList <Cuenta> cuentas = new ArrayList<Cuenta>();
+    private ArrayList <Cuenta> cuentas = new ArrayList<Cuenta>();
 
 
     public Cliente(String nombre, String rut , String direccion, String numTelefono) {
@@ -17,22 +17,44 @@ public class Cliente {
         this.direccion = direccion;
         this.numTelefono = numTelefono;
 
+
+
     }
 
 
 
     @Override
     public String toString() {
-        return "Cliente{" +
-                "nombre='" + nombre + '\'' +
-                ", rut='" + rut + '\'' +
-                ", direccion='" + direccion + '\'' +
-                ", numTelefono='" + numTelefono + '\'' +
-                ", \ncuentas=" + cuentas +
-                '}';
+        return "Cliente||" +
+                 nombre +
+                " " + rut +
+                "||" + direccion +
+                " " + numTelefono +
+                "||cuentas" + cuentas ;
     }
 
     public void infoCliente(){
         System.out.println(toString());
+    }
+
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getRut() {
+        return rut;
+    }
+
+    public String getNumTelefono() {
+        return numTelefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public ArrayList<Cuenta> getCuentas() {
+        return cuentas;
     }
 }
