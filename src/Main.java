@@ -13,7 +13,6 @@ public class Main {
 
         cliente1.infoCliente();
 
-
     }
 
 }
