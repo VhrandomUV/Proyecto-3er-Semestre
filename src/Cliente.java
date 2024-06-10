@@ -17,8 +17,6 @@ public class Cliente {
         this.direccion = direccion;
         this.numTelefono = numTelefono;
 
-
-
     }
 
 
@@ -30,7 +28,7 @@ public class Cliente {
                 " " + rut +
                 "||" + direccion +
                 " " + numTelefono +
-                "||cuentas" + cuentas ;
+                "||cuentas\n" + getCuentas() ;
     }
 
     public void infoCliente(){
