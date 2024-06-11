@@ -9,24 +9,24 @@ public abstract class Cuenta {
 
 
 
-    public void transferencia(int cantidad, Cuenta destino) {
+    public String transferencia(int cantidad, Cuenta destino) {
         this.saldo -= cantidad;
         destino.saldo += cantidad;
-        System.out.println("Transferencia||$"+cantidad +"|| Destino "+destino.numCuenta + "||"+toString());
+        return "Transferencia||" +cantidad +"|| Destino "+destino.numCuenta + "||"+toString();
     }
 
-    public void deposito(int cantidad ){
+    public String deposito(int cantidad ){
         this.saldo += cantidad;
-        System.out.println("Deposito||$"+ cantidad+ "||"+toString());
+        return  "Deposito||"+ cantidad+ "||"+toString();
     }
-    public void giro(int cantidad){
+    public String giro(int cantidad){
         this.saldo -= cantidad;
-        System.out.println("Giro||$"+cantidad +"||"+toString());
+        return "Giro||"+cantidad +"||"+toString();
     }
 
     @Override
     public String toString() {
-        return numCuenta + "||" + titular + "||" + saldo +"||"+ tipo + "||"+ getDate()  ;
+        return numCuenta + "||" + titular + "||" + saldo +"||"+ tipo + "||";
     }
 
     public Cuenta(Cliente cliente, String tipo, String numCuenta) {
@@ -36,7 +36,6 @@ public abstract class Cuenta {
         cliente.getCuentas().add(this);
 
 
-        System.out.println( "Crear "+this.tipo +"||"+this.numCuenta+"||$" + this.saldo +"||"+ this.titular+ "||" + cliente.getRut() +"||"+ getDate());
 
     }
 
@@ -44,10 +43,11 @@ public abstract class Cuenta {
         this.saldo = saldo;
     }
 
-    public String getDate(){
-        LocalDateTime fecha = LocalDateTime.now();
-        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy/HH:mm:ss:nn");
-        String formattedDate = fecha.format(myFormatObj);
-        return  formattedDate;
+
+
+    public String output(Cliente cliente, String fecha){
+        return "Crear||"+this.tipo +"||"+this.numCuenta+"||$" + this.saldo +"||"+ this.titular+ "||" + cliente.getRut() +"||"+ fecha;
     }
+
+
 }

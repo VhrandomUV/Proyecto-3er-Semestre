@@ -4,13 +4,13 @@ public class Ahorros extends Cuenta{
     }
 
     @Override
-    public void giro(int cantidad) {
+    public String giro(int cantidad) {
         if(cantidad < 5000){
         this.saldo -= cantidad;
-            System.out.println("Giro $"+cantidad +" "+toString());
+            return  "Giro $"+cantidad +" "+toString();
         }
         else{
-            System.out.println("Solo puedes rertirar >$5000");
+            return  "Solo puedes rertirar >$5000";
         }
     }
 }

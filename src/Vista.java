@@ -5,10 +5,10 @@ public class Vista extends Cuenta{
     }
 
     @Override
-    public void giro(int cantidad){
+    public String giro(int cantidad){
 
         this.saldo -= (300 + cantidad);
-        System.out.println("Giro $"+cantidad +" costo transaccion $300 "+toString());
+        return ("Giro $"+cantidad +" costo transaccion $300 "+toString());
 
     }
 }

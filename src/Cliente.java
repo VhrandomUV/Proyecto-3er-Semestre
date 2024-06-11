@@ -16,6 +16,8 @@ public class Cliente {
         this.rut = rut;
         this.direccion = direccion;
         this.numTelefono = numTelefono;
+        System.out.println("Cliente Creado");
+
 
     }
 
@@ -28,7 +30,7 @@ public class Cliente {
                 " " + rut +
                 "||" + direccion +
                 " " + numTelefono +
-                "||cuentas\n" + getCuentas() ;
+                "||cuentas" + getCuentas() ;
     }
 
     public void infoCliente(){
