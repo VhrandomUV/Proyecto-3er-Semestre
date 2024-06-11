@@ -85,7 +85,7 @@ public class Main {
                 case "Giro":
                     numCuenta = info[2];
                     fecha = info[6];
-                    Cuenta cuentaGiro = mapaCuentas.get(info[2]);
+                    Cuenta cuentaGiro = mapaCuentas.get(numCuenta);
                     output = cuentaGiro.giro(Integer.parseInt(info[1])) + fecha;
                     writer.println(output);
                     break;
