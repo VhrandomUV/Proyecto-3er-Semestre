@@ -16,7 +16,6 @@ public class Main {
             transacciones.add(info);
         }
 
-        // Ordenar las transacciones por fecha y hora
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy/HH:mm:ss:SSSSSSSS");
         transacciones.sort((a, b) -> {
             try {
@@ -26,10 +25,8 @@ public class Main {
             }
         });
 
-        // Abrir archivo de salida con PrintWriter
         PrintWriter writer = new PrintWriter(new FileWriter("salida.txt"));
 
-        // Procesar las transacciones ordenadas
         for (String[] info : transacciones) {
             String tipo = info[0];
             String output = "";
@@ -94,8 +91,6 @@ public class Main {
                     break;
             }
         }
-
-        // Cerrar el archivo de salida
         writer.close();
         lee.close();
     }
