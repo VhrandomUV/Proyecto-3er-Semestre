@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException, ParseException, IOException {
+    public static void main(String[] args) throws  IOException {
 
         HashMap<String, Cliente> mapaClientes = new HashMap<>();
         HashMap<String, Cuenta> mapaCuentas = new HashMap<>();
@@ -16,7 +16,7 @@ public class Main {
             transacciones.add(info);
         }
 
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy/HH:mm:ss:SSSSSSSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy/HH:mm:ss");
         transacciones.sort((a, b) -> {
             try {
                 return sdf.parse(a[a.length - 1]).compareTo(sdf.parse(b[b.length - 1]));
